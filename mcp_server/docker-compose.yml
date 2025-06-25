@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  philosophy-mcp:
+    build: .
+    volumes:
+      # Mount the vector database (read-only since we only query it)
+      - ../vectorization/philosophy_vectordb:/app/philosophy_vectordb:ro
+    stdin_open: true
+    tty: true
+    # Keep container running for MCP communication
+    command: python3 philosophy_mcp_server.py

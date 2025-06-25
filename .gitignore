@@ -1,0 +1,5 @@
+data/*
+vectorization/philosophy_vectordb/*
+__pycache__/
+*.pyc*
+*cpython*
